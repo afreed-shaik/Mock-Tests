@@ -1,0 +1,282 @@
+1--->Option-2
+2--->Option-1 & Option-3
+3--->Option-2
+4--->Option-3
+5--->Option-5
+6--->Option-
+9--->Option-B & Option-C
+10--->Option-C
+11--->Option-2
+12--->Option-3
+13--->Option
+14--->Option-3
+15--->Option-
+16--->Option-
+17--->The JVM is used to both translate the bytecode into the machine language for a particular computer, 
+and actually execute the corresponding machine-language instructions as well. Without the JVM, you can’t run a Java application.
+The JVM is platform-dependent. Different JVM is designed for different OS and byte code is able to run on different OS.
+18--->The meaning of platform-independent is that the java compiled code(byte code) can run on all operating systems.
+Platform independence in JAVA means you can “write once ,run anywhere” which notifies that you can run JAVA code in any operating system that supports java without recompilation.
+Java code is compiled by the compiler and converted into bytecode.
+This bytecode is a platform independent code because it can be run on multiple platforms i.e. Write Once and Run Anywhere(WORA).
+19--->java.lang.Object
+20--->class path: CLASSPATH is an environment variable which is used by Application ClassLoader to locate and load the .class files.
+Path:It is an environment variable which is used by operating system to find the executable files.
+21--->package com.assessment;
+
+import java.util.Scanner;
+
+public class NaturalNumbers {
+
+public static void main(String[] args) {
+
+Scanner sc=new Scanner(System.in);
+
+System.out.println("Enter the range:");
+
+naturalNumbers(sc.nextInt(),sc.nextInt());
+
+}
+
+private static void naturalNumbers(int start, int end) {
+
+for(int i=start;i<=end;i++) {
+
+System.out.print(i+" ");
+
+}
+
+}
+
+22--->package com.assessment;
+
+import java.util.Scanner;
+
+public class ReverseOfWords {
+
+public static void main(String[] args) {
+
+Scanner sc=new Scanner(System.in);
+
+System.out.println("Enter the String");
+
+String str=sc.nextLine();
+
+reverseOfWords(str);
+
+}
+
+private static void reverseOfWords(String str) {
+
+String rev="";
+
+String[] input=str.split(" ");
+
+for(int i=0;i<input.length;i++) {
+
+String word=input[i];
+
+String reverseWord=" ";
+
+for(int j=word.length()-1;j>=0;j--) {
+
+reverseWord=reverseWord+word.charAt(j);
+
+}
+
+rev = rev + reverseWord + " ";
+
+}
+
+System.out.println(rev);
+
+}
+
+}
+23--->package com.assessment;
+
+import java.util.Scanner;
+
+public class RussianMultiplication {
+
+public static void main(String[] args) {
+
+System.out.println("Enter Two Numbers");
+
+Scanner sc = new Scanner(System.in);
+
+int first_num = sc.nextInt();
+
+int second_num = sc.nextInt();
+
+int sum = 0;
+
+String res = first_num+" : "+second_num+"\r";
+
+while(first_num != 0) {
+
+if(first_num % 2 != 0) {
+
+sum += second_num;
+
+}
+
+first_num = first_num / 2 ;
+
+second_num = second_num * 2 ;
+
+res += first_num+" : "+second_num+"\r";
+
+}
+
+System.out.println(res);
+
+System.out.println(sum);
+
+}
+
+}
+24--->The final keyword is a non-access modifier used for classes, attributes and methods, which makes them non-changeable.
+
+The final variable cannot be reinitialized with another value.
+
+The final method cannot be overridden.The final class cannot be extended
+25--->25)what is package and how to create our own package in java . Package is a collection of classes and interface. Each package in Java has its unique name and organizes its classes and interfaces into a separate namespace, or name group.Syntax:package nameOfPackageChoose the name of the package
+
+· Include the package command as the first line of code in your Java Source File.
+
+· The Source file contains the classes, interfaces, etc you want to include in the package
+26--->Exception is an abnormal condition. Exception normally disrupts the normal flow of the application.
+
+There are mainly two types of exceptions: checked and unchecked.
+Checked Exception: . Checked exceptions are checked at compile-time. The classes which directly inherit Throwable class except Runtime Exception and Error are known as checked exceptions e.g. IOException, SQLException etc
+
+Unchecked Exception: The classes which inherit Runtime Exception are known as unchecked exceptions e.g. ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc. Unchecked exceptions are not checked at compile-time, but they are checked at runtime.
+
+try: The "try" keyword is used to specify a block where we should place exception code. The try block must be followed by either catch or finally.
+
+catch: The "catch" block is used to handle the exception. It must be preceded by try block which means we can't use catch block alone. It can be followed by finally block later.
+
+finally: The "finally" block is used to execute the important code of the program. It is executed whether an exception is handled or not.
+
+throw: The "throw" keyword is used to throw an exception.
+
+throws: The "throws" keyword is used to declare exceptions. It doesn't throw an exception. It specifies that there may occur an exception in the method. It is always used with method signature.
+27--->super keyword is used to access methods of the parent class while this is used to access methods of the current class.
+The this keyword refers to the current object in a method or constructor. this can also be used to:Invoke current class constructor,
+Invoke current class method,Return the current class object,Pass an argument in the method call,Pass an argument in the constructor call
+28--->NullPointerException is a runtime exception and it is thrown when the application try to use an object reference which has a null value.
+29--->If you are creating your own Exception that is known as custom exception or user-defined exception.
+
+To create a custom exception, we have to extend the java.lang.Exception class.
+
+class InvalidAgeException extends Exception{
+
+InvalidAgeException(String s){
+
+super(s);
+
+}
+
+}
+
+class TestCustomException1{
+
+static void validate(int age)throws InvalidAgeException{
+
+if(age<18)
+
+throw new InvalidAgeException("not valid");
+
+else
+
+System.out.println("welcome to vote");
+
+}
+
+public static void main(String args[]){
+
+try{
+
+validate(13);
+
+}catch(Exception m){
+
+System.out.println("Exception occured: "+m);}
+
+System.out.println("rest of the code...");
+
+}
+
+}
+30--->package com.assessment;
+
+import java.util.Scanner;
+
+public class AscendingInArray {
+
+public static void main(String[] args) {
+
+int size=0,temp;
+
+Scanner sc=new Scanner(System.in);
+
+System.out.println("Enter the size of array:");
+
+size=sc.nextInt();
+
+int array[]=new int[size];
+
+System.out.println("Enter array elements:");
+
+for(int i=0;i<size;i++) {
+
+array[i]=sc.nextInt();
+
+}
+
+System.out.println("The elements in tha array are:");
+
+for(int i=0;i<array.length;i++) {
+
+System.out.print(array[i]+" ");
+
+}
+
+for (int i = 0; i < size; i++)
+
+{
+
+for (int j = i + 1; j <size; j++) {
+
+if (array[i] > array[j])
+
+{
+
+temp = array [i];
+
+array[i] = array[j];
+
+array[j] = temp;
+
+}
+
+}
+
+}
+
+System.out.print("Array Elements in Ascending Order: ");
+
+for (int i = 0; i < size - 1; i++)
+
+{
+
+System.out.print(array[i] + ", ");
+
+}
+
+System.out.print(array[size - 1]);
+
+}
+
+}
